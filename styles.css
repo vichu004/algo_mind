@@ -1,0 +1,85 @@
+/* Algomind — Landing page styles */
+:root{
+  --bg: #0f1724;
+  --card:#0b1220;
+  --muted:#9aa4b2;
+  --accent1:#7b61ff;
+  --accent2:#00d4ff;
+  --glass: rgba(255,255,255,0.04);
+  --radius: 12px;
+}
+*{box-sizing:border-box}
+html,body{height:100%}
+body{
+  margin:0;
+  font-family:Inter,system-ui,-apple-system,"Segoe UI",Roboto,"Helvetica Neue",Arial;
+  color:#e6eef6;
+  background:linear-gradient(180deg,#071226 0%, #061426 100%);
+  -webkit-font-smoothing:antialiased;
+}
+.container{max-width:1100px;margin:0 auto;padding:2rem}
+.header-inner{display:flex;align-items:center;justify-content:space-between;gap:1rem}
+.brand{display:flex;align-items:center;gap:0.6rem;text-decoration:none;color:inherit}
+.brand-name{font-weight:700}
+.logo{filter:drop-shadow(0 6px 18px rgba(0,0,0,0.5))}
+.main-nav ul{list-style:none;margin:0;padding:0;display:flex;gap:1rem}
+.main-nav a{color:var(--muted);text-decoration:none;padding:.5rem .75rem;border-radius:8px}
+.main-nav a:hover{color:var(--accent2);background:var(--glass)}
+.nav-toggle{display:none;border:0;background:transparent;color:var(--muted);font-size:1.1rem}
+
+/* Hero */
+.hero{padding:6rem 0 4rem;position:relative}
+.hero-inner{display:grid;grid-template-columns:1fr 420px;gap:2rem;align-items:center}
+.hero-copy h1{font-size:2.2rem;margin:0 0 .6rem;line-height:1.05}
+.lead{color:var(--muted);margin-bottom:1.2rem}
+.hero-ctas{display:flex;gap:1rem}
+.hero-art{min-height:240px}
+.hero-blob{width:100%;height:100%;border-radius:16px;box-shadow:0 20px 50px rgba(11,17,28,0.6)}
+
+/* Buttons */
+.btn{display:inline-block;padding:.65rem 1rem;border-radius:10px;text-decoration:none;color:inherit;border:1px solid transparent}
+.btn-primary{background:linear-gradient(90deg,var(--accent1),var(--accent2));color:#031022;font-weight:600}
+.btn-ghost{background:transparent;border:1px solid rgba(255,255,255,0.06)}
+.btn-outline{background:transparent;border:1px solid rgba(255,255,255,0.06)}
+
+/* Sections */
+.section{padding:4rem 0}
+.section h2{margin:0 0 .25rem;font-size:1.4rem}
+.section-sub{color:var(--muted);margin-bottom:1.25rem}
+
+.card{background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));padding:1.2rem;border-radius:var(--radius);box-shadow:0 6px 22px rgba(2,6,23,0.6)}
+.grid{display:grid;gap:1rem}
+.feature-grid{grid-template-columns:repeat(auto-fit,minmax(200px,1fr))}
+.feature .icon{font-size:1.8rem;margin-bottom:.6rem}
+.product-grid{grid-template-columns:repeat(auto-fit,minmax(220px,1fr))}
+.product .product-art{height:120px;border-radius:8px;margin-bottom:.8rem;background:linear-gradient(180deg,var(--accent1),var(--accent2));box-shadow:inset 0 -10px 30px rgba(0,0,0,0.25)}
+
+.testimonial-grid{grid-template-columns:repeat(auto-fit,minmax(220px,1fr))}
+.testimonial p{color:var(--muted)}
+.testimonial cite{display:block;margin-top:.75rem;color:var(--muted);font-size:.85rem}
+
+/* Contact */
+.contact-inner{display:grid;grid-template-columns:1fr 420px;gap:2rem;align-items:start}
+.contact-form label{display:block;margin-bottom:.8rem}
+.contact-form span{display:block;margin-bottom:.4rem;color:var(--muted);font-size:.9rem}
+.contact-form input, .contact-form textarea{width:100%;padding:.65rem;border-radius:8px;border:1px solid rgba(255,255,255,0.04);background:transparent;color:inherit}
+.contact-form button{margin-top:.5rem}
+.form-status{margin-top:.6rem;color:var(--accent2)}
+
+.site-footer{border-top:1px solid rgba(255,255,255,0.03);padding:1.2rem 0;margin-top:2rem}
+.footer-inner{display:flex;justify-content:space-between;align-items:center}
+.footer-nav a{color:var(--muted);margin-left:1rem;text-decoration:none}
+
+/* Responsive */
+@media (max-width:880px){
+  .hero-inner{grid-template-columns:1fr}
+  .contact-inner{grid-template-columns:1fr}
+  .nav-toggle{display:block}
+  .main-nav{display:none}
+  .main-nav.open{display:block;position:absolute;top:68px;right:16px;background:var(--card);padding:1rem;border-radius:10px;box-shadow:0 10px 40px rgba(2,6,23,0.7)}
+}
+
+@media (max-width:560px){
+  .container{padding:1.25rem}
+  .hero-copy h1{font-size:1.6rem}
+}
