@@ -175,7 +175,6 @@
         </div>
       </div>
     </section>
-
   </main>
 
   <footer class="site-footer">
@@ -188,6 +187,22 @@
     </div>
   </footer>
 
+<!-- this script enable the chatwidget of chatwoot  -->
+ <script>
+  (function(d,t) {
+    var BASE_URL="http://46.225.20.65:3000";
+    var g=d.createElement(t),s=d.getElementsByTagName(t)[0];
+    g.src=BASE_URL+"/packs/js/sdk.js";
+    g.async = true;
+    s.parentNode.insertBefore(g,s);
+    g.onload=function(){
+      window.chatwootSDK.run({
+        websiteToken: 'pTXH1a59MiTokhxiqwdqy1pv',
+        baseUrl: BASE_URL
+      })
+    }
+  })(document,"script");
+</script>
   <script src="script.js" defer></script>
 </body>
 </html>
